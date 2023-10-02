@@ -3,7 +3,10 @@ const mongoURI = 'mongodb+srv://capobrain:capo2345@cluster0.hju6mvr.mongodb.net/
 
  const connectToMongo = async ()=>{
     try {
-        mongoose.connect(mongoURI)
+        mongoose.connect(mongoURI,{
+            useNewUrlParser: true,
+  useUnifiedTopology: true,
+        })
         console.log('Successfuly connected with mongodb')
     } catch (error) {
         console.log(error)
